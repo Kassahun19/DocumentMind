@@ -3,6 +3,10 @@
   "buildCommand": "npm run build",
   "rewrites": [
     {
+      "source": "/api/auth/(login|register)",
+      "destination": "/api/index.ts"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
