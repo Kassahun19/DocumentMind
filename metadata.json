@@ -1,0 +1,8 @@
+{
+  "name": "DocuMind AI",
+  "description": "Enterprise-grade PDF intelligence platform to upload documents and query knowledge using Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
