@@ -244,7 +244,10 @@ export default function AuthScreen({
       }
 
       if (!response.ok) {
-        throw new Error(data?.error || "Authentication failed");
+        // Improve debuggability on Vercel where the server might return non-JSON.
+        const serverError = data?.error || data?.message || data?.details;
+        const fallback = serverError || resText || "Authentication failed";
+        throw new Error(fallback);
       }
 
       onAuthSuccess(data);
