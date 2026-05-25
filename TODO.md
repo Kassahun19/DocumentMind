@@ -1,7 +1,9 @@
-- [ ] Add JSON parse-error middleware + ensure JSON error responses for auth routes
-- [ ] Add local logging for /api/auth/login and /api/auth/register to confirm req.body is received
-- [x] Re-run local auth (npm run dev) and verify UI shows real backend error (not just “Authentication failed”)
+# TODO
 
-- [ ] If login still fails: inspect logged server.log output and patch the exact failing auth logic/route wiring
-- [x] Added JSON parse-error middleware + debug logs to confirm req.body parsing
+## Auth fix for Vercel FUNCTION_INVOCATION_FAILED
 
+- [x] Investigated Express-based `server.ts` auth routes and confirmed they do not start on Vercel.
+- [x] Added Vercel serverless handler `api/auth/login/index.ts` to properly handle `/api/auth/login`.
+- [x] Added Vercel serverless handler `api/auth/register/index.ts` to properly handle `/api/auth/register`.
+- [ ] Deploy to Vercel and verify login/register from UI.
+- [ ] If still failing, add `api/auth/me/index.ts` as well and/or ensure Vercel routing is not rewritten to Express.
